@@ -397,7 +397,7 @@ if uploaded_file:
 
                 model_name = st.selectbox(
                     "Select LLM Model",
-                    options=["gpt-oss:20b", "llama3.1:latest", "gemma3:12b", "richardyoung/llama-medx_v32:latest"],
+                    options=["alibayram/medgemma:4b", "gpt-oss:20b", "llama3.1:latest", "gemma3:12b", "richardyoung/llama-medx_v32:latest"],
                     on_change=clear_chat_history,)
                 
                 llm = ChatOllama(model=model_name) 
@@ -424,8 +424,8 @@ if uploaded_file:
                     "避免使用過於專業的術語,除非使用者特別要求。"
                 )
 
-                rag_knowledge = load_knowledge_base()
-                # rag_knowledge = False
+                # rag_knowledge = load_knowledge_base()
+                rag_knowledge = False
                 if rag_knowledge:
                     system_prompt += f"{rag_knowledge}\n\n請在回答時適時參考上述資料,用易懂的方式解釋。"
                 patient_context = f"""
