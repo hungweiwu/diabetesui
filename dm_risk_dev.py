@@ -6,8 +6,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 from langchain.prompts import ChatPromptTemplate
 from langchain_community.chat_models import ChatOllama
-from langchain.memory import ConversationBufferMemory
-from langchain_huggingface import HuggingFaceEndpoint
 import os
 
 
